@@ -1,0 +1,79 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__heading {
+        padding: 30px;
+
+        &__h2 {
+            font-size: 40px;
+            font-family: initial;
+            font-weight: 500;
+        }
+    }
+
+    &__newTask {
+        width: 70%;
+
+        &__card {
+            height: 190px;
+        }
+
+        &__form {
+            height: 123px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            &__top {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &__bottom {
+                display: flex;
+                justify-content: space-between;
+
+                select {
+                    flex: 0.1;
+                }
+            }
+
+            &__description {
+                flex: 0.93;
+            }
+        }
+    }
+
+    &__tasks {
+        width: 70%;
+        margin-top: 30px;
+
+        &__card {
+            margin-top: 20px;
+        }
+
+        &__status {
+            font-size: 20px;
+            color: green;
+        }
+
+        &__button {
+            display: flex;
+            justify-content: space-between;
+            width: 20%;
+        }
+
+        &__stat {
+            display: flex;
+            align-items: baseline;
+        }
+
+        &__statuss {
+            width: 100px;
+        }
+    }
+
+}

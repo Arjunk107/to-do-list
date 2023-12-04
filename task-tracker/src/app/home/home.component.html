@@ -1,0 +1,61 @@
+<div class="main">
+    <div class="main__heading">
+        <h2 class="main__heading__h2">Task Tracker</h2>
+    </div>
+    <div class="main__newTask" *ngIf="showform">
+        <div class="card main__newTask__card">
+            <h5 class="card-header">New Task</h5>
+            <div class="card-body">
+                <form class="main__newTask__form" (ngSubmit)="updatelist(tForm,taskUpdate)" #tForm="ngForm">
+                    <div class=" main__newTask__form__top">
+                        <div class="form-group">
+                            <label for="id">Id:</label>
+                            <input type="id" class="form-control" id="id" name="id" [(ngModel)]="taskUpdate.id"
+                                #id="ngModel">
+                        </div>
+                        <div class="form-group">
+                            <label for="sname">Id:</label>
+                            <input type="name" class="form-control" id="name" name="name" [(ngModel)]="taskUpdate.name"
+                                #name="ngModel">
+                        </div>
+                        <div class=" main__tasks__stat">
+                            <p>Completed : </p>
+                            <select class="form-control main__tasks__statuss" id="completed" name="completed"
+                                [(ngModel)]="taskUpdate.completed" #completed="ngModel">
+                                <option selected>True</option>
+                                <option>False</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="main__newTask__form__bottom">
+
+                        <div class="subbtn">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="main__tasks">
+        <div class="title">
+            <h2>Tasks</h2>
+        </div>
+        <div class="main__tasks__taskSection">
+            <div class="card main__tasks__card" *ngFor="let deta of taskData; index as i ">
+                <h5 class="card-header">{{deta.id}}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">{{deta.title}}</h5>
+                    <p class="card-text main__tasks__status">Status : {{deta.completed}}</p>
+                    <div class="main__tasks__button">
+                        <button type="button" class="btn btn-success" (click)="showForm()" (click)="demo(i)">Update
+                        </button>
+                        <button type="button" class="btn btn-danger" (click)="deleteData(i)">Delete</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
